@@ -45,10 +45,7 @@ public class Main {
 					int seats = sc.nextInt();
 
 					try {
-						for (int i = 0; i < seats; i++) {
-							event.AddSeats();
-						}
-						
+						event.AddSeats(seats);
 						System.out.println(event.getSeats());
 					} catch (Exception e) {
 						System.err.println(e);
@@ -62,10 +59,7 @@ public class Main {
 					int seats = sc.nextInt();
 
 					try {
-						for (int i = 0; i < seats; i++) {
-							event.RemoveSeats();
-						}
-						
+						event.RemoveSeats(seats);
 						System.out.println(event.getSeats());
 					} catch (Exception e) {
 						System.err.println(e);
