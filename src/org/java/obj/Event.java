@@ -85,6 +85,12 @@ public class Event {
 
 		setReservedSeats(reservedSeats - 1);
 	}
+	
+	//print total seats reserved/total
+	public String getSeats() {
+		return "Totale posti prenotati: " + getReservedSeats() 
+				+ "\nTotale posti disponibili: " + (getTotalSeats() - getReservedSeats());
+	}
 
 	@Override
 	public String toString() {

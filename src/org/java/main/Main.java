@@ -49,9 +49,7 @@ public class Main {
 							event.AddSeats();
 						}
 						
-						System.out.println("Totale posti prenotati: "
-								+ event.getReservedSeats() + "\nTotale posti disponibili: "
-								+ (event.getTotalSeats() - event.getReservedSeats()));
+						System.out.println(event.getSeats());
 					} catch (Exception e) {
 						System.err.println(e);
 						continue;
@@ -68,9 +66,7 @@ public class Main {
 							event.RemoveSeats();
 						}
 						
-						System.out.println("Totale posti prenotati: "
-								+ event.getReservedSeats() + "\nTotale posti disponibili: "
-								+ (event.getTotalSeats() - event.getReservedSeats()));
+						System.out.println(event.getSeats());
 					} catch (Exception e) {
 						System.err.println(e);
 						continue;
@@ -80,11 +76,10 @@ public class Main {
 
 				case 3:
 					ask = false;
+					sc.close();
 					System.out.println("\n-------------------------------\n");
 					System.out.println("Grazie e arrivederci, ecco un riepilogo:");
-					System.out.println("Totale posti prenotati: "
-							+ event.getReservedSeats() + "\nTotale posti disponibili: "
-							+ (event.getTotalSeats() - event.getReservedSeats()));
+					System.out.println(event.getSeats());
 				}
 
 			}
