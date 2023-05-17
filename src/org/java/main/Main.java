@@ -7,7 +7,6 @@ import org.java.obj.Event;
 
 public class Main {
 	public static void main(String[] args) {
-		// open scanner
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Benvenuto, inserisci un nuovo evento:" + "\nTitolo: ");
@@ -25,13 +24,15 @@ public class Main {
 
 		try {
 			Event event = new Event(title, LocalDate.of(year, month, day), totalSeats);
-			System.out.println(event);
+			System.out.println("\n-------------------------------");
 
 			boolean ask = true;
 
 			while (ask) {
-				System.out.println(
-						"Cosa vuoi fare?" + "\n[1]Prenota posti" + "\n[2]Disdici posti" + "\n[3]Esci e Stampa");
+				System.out.println("\nCosa vuoi fare?" 
+									+ "\n[1]Prenota posti" 
+									+ "\n[2]Disdici posti" 
+									+ "\n[3]Esci e Stampa");
 				int choice = sc.nextInt();
 
 				if (choice < 1 || choice > 3) {
@@ -48,7 +49,7 @@ public class Main {
 						event.AddSeats(seats);
 						System.out.println(event.getSeats());
 					} catch (Exception e) {
-						System.err.println(e);
+						System.err.println("Error: " + e + "\n");
 						continue;
 					}
 				}
@@ -62,7 +63,7 @@ public class Main {
 						event.RemoveSeats(seats);
 						System.out.println(event.getSeats());
 					} catch (Exception e) {
-						System.err.println(e);
+						System.err.println("Error: " + e + "\n");
 						continue;
 					}
 				}
@@ -79,7 +80,7 @@ public class Main {
 			}
 
 		} catch (Exception e) {
-			System.err.println("Error: " + e);
+			System.err.println("Error: " + e + "\n");
 		}
 
 	}

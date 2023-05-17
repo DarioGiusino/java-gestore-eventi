@@ -71,7 +71,7 @@ public class Event {
 	// add seats
 	public void AddSeats(int number) throws Exception {
 		// check if totalSeats are full or date is passed
-		if (getReservedSeats() == getTotalSeats() || getDate().isBefore(LocalDate.now()) || number <= 0)
+		if (getDate().isBefore(LocalDate.now()) || number <= 0 || getReservedSeats() + number > getTotalSeats())
 			throw new Exception("No more seats available, event passed or invalid number");
 
 		setReservedSeats(reservedSeats + number);
@@ -80,7 +80,7 @@ public class Event {
 	// remove seats
 	public void RemoveSeats(int number) throws Exception {
 		// check if totalSeats are full or date is passed
-		if (getReservedSeats() == 0 || getDate().isBefore(LocalDate.now()) || number <= 0)
+		if (getDate().isBefore(LocalDate.now()) || number <= 0 || getReservedSeats() - number <= 0)
 			throw new Exception("This event contains no seats, event passed or invalid number");
 
 		setReservedSeats(reservedSeats - number);
