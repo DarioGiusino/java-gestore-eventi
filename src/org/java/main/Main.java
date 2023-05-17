@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import org.java.obj.Concert;
 import org.java.obj.Event;
+import org.java.obj.EventPlan;
 
 public class Main {
 	public static void main(String[] args) {
@@ -79,9 +80,17 @@ public class Main {
 
 			}
 			
-			Concert c = new Concert("maneskin", LocalDate.of(2023, 05, 19), 2000, LocalTime.now(),
+			Concert c1 = new Concert("maneskin", LocalDate.of(2023, 05, 20), 30, LocalTime.now(),
 					BigDecimal.valueOf(90.23));
-			System.out.println("Concento: " + c);
+			Concert c2 = new Concert("max pezzali", LocalDate.of(2023, 05, 19), 20, LocalTime.now(),
+					BigDecimal.valueOf(99.23));
+//			System.out.println("Concerto: " + c1);
+			
+			EventPlan e1 = new EventPlan("Titolo Programmazione Eventi...");
+			e1.addEvent(c1);
+			e1.addEvent(c2);
+			
+			System.out.println("\n" + e1);
 			
 		} catch (Exception e) {
 			System.err.println("Error: " + e + "\n");
